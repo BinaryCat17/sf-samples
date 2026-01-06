@@ -3,6 +3,10 @@ project(sf-samples LANGUAGES C) # Enable C for dependency compatibility
 
 find_package(sf-compiler REQUIRED)
 find_package(sf-runtime REQUIRED)
+find_package(sf-backend-cpu REQUIRED)
+
+add_subdirectory(apps/sf-runner)
+add_subdirectory(apps/sf-window)
 
 enable_testing()
 
