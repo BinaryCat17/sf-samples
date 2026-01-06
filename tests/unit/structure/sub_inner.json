@@ -1,0 +1,13 @@
+{
+    "nodes": [
+        { "id": "in", "type": "Input", "data": {"shape": [], "dtype": "f32"} },
+        { "id": "const_2", "type": "Const", "data": {"value": 2.0} },
+        { "id": "mul", "type": "Mul" },
+        { "id": "out", "type": "Output" }
+    ],
+    "links": [
+        { "src": "in", "src_port": "out", "dst": "mul", "dst_port": "a" },
+        { "src": "const_2", "src_port": "out", "dst": "mul", "dst_port": "b" },
+        { "src": "mul", "src_port": "out", "dst": "out", "dst_port": "in" }
+    ]
+}

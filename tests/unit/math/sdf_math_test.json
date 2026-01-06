@@ -1,0 +1,16 @@
+{
+    "nodes": [
+        { "id": "max", "type": "Const", "data": {"value": 1.0} },
+        { "id": "min", "type": "Const", "data": {"value": 0.0} },
+        { "id": "val", "type": "Const", "data": {"value": 0.5} },
+
+        { "id": "edges", "type": "Join" },
+        { "id": "res_smooth", "type": "SmoothStep" }
+    ],
+    "links": [
+        { "src": "min", "src_port": "out", "dst": "edges", "dst_port": "a" },
+        { "src": "max", "src_port": "out", "dst": "edges", "dst_port": "b" },
+        { "src": "val", "src_port": "out", "dst": "res_smooth", "dst_port": "x" },
+        { "src": "edges", "src_port": "out", "dst": "res_smooth", "dst_port": "edges" }
+    ]
+}

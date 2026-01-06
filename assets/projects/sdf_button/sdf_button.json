@@ -1,0 +1,77 @@
+{
+    "nodes": [
+        { "id": "const_05", "type": "Const", "data": {"value": 0.5} },
+        { "id": "const_radius", "type": "Const", "data": {"value": 0.2} },
+        { "id": "edge0", "type": "Const", "data": {"value": 0.0} },
+        { "id": "edge1", "type": "Const", "data": {"value": -0.01} },
+        { "id": "u_Aspect", "type": "Input", "data": {"shape": [], "dtype": "f32"} },
+        { "id": "u_ResX", "type": "Input", "data": {"shape": [], "dtype": "f32"} },
+        { "id": "u_ResY", "type": "Input", "data": {"shape": [], "dtype": "f32"} },
+        { "id": "u_MouseX", "type": "Input", "data": {"shape": [], "dtype": "f32"} },
+        { "id": "u_MouseY", "type": "Input", "data": {"shape": [], "dtype": "f32"} },
+        { "id": "u_FragX", "type": "Input", "data": {"shape": [], "dtype": "f32", "provider": "host.index.1"} },
+        { "id": "u_FragY", "type": "Input", "data": {"shape": [], "dtype": "f32", "provider": "host.index.0"} },
+        { "id": "out_Color", "type": "Output", "data": {"output": true, "screen_size": true} },
+        
+        { "id": "const_0", "type": "Const", "data": {"value": 0.0} },
+        { "id": "x_norm", "type": "Div" },
+        { "id": "x_uv", "type": "Mul" },
+        
+        { "id": "mx_norm", "type": "Div" },
+        { "id": "mx_uv", "type": "Mul" },
+        
+        { "id": "y_norm", "type": "Div" },
+        { "id": "my_norm", "type": "Div" },
+        
+        { "id": "x_diff", "type": "Sub" },
+        { "id": "y_diff", "type": "Sub" },
+        
+        { "id": "uv_diff", "type": "Join" },
+        { "id": "dist", "type": "Length" },
+        { "id": "sdf", "type": "Sub" },
+        { "id": "aa_edges", "type": "Join" },
+        { "id": "sdf_result", "type": "SmoothStep" }
+    ],
+    "links": [
+        { "src": "u_FragX", "dst": "x_norm", "dst_port": "a" },
+        { "src": "u_ResX", "dst": "x_norm", "dst_port": "b" },
+        { "src": "x_norm", "dst": "x_uv", "dst_port": "a" },
+        { "src": "u_Aspect", "dst": "x_uv", "dst_port": "b" },
+        
+        { "src": "u_MouseX", "dst": "mx_norm", "dst_port": "a" },
+        { "src": "u_ResX", "dst": "mx_norm", "dst_port": "b" },
+        { "src": "mx_norm", "dst": "mx_uv", "dst_port": "a" },
+        { "src": "u_Aspect", "dst": "mx_uv", "dst_port": "b" },
+
+        { "src": "u_FragY", "dst": "y_norm", "dst_port": "a" },
+        { "src": "u_ResY", "dst": "y_norm", "dst_port": "b" },
+        
+        { "src": "u_MouseY", "dst": "my_norm", "dst_port": "a" },
+        { "src": "u_ResY", "dst": "my_norm", "dst_port": "b" },
+        
+        { "src": "x_uv", "dst": "x_diff", "dst_port": "a" },
+        { "src": "mx_uv", "dst": "x_diff", "dst_port": "b" },
+        
+        { "src": "y_norm", "dst": "y_diff", "dst_port": "a" },
+        { "src": "my_norm", "dst": "y_diff", "dst_port": "b" },
+        
+        { "src": "x_diff", "dst": "uv_diff", "dst_port": "a" },
+        { "src": "y_diff", "dst": "uv_diff", "dst_port": "b" },
+        { "src": "const_0", "dst": "uv_diff", "dst_port": "c" },
+        { "src": "const_0", "dst": "uv_diff", "dst_port": "d" },
+        
+        { "src": "uv_diff", "dst": "dist", "dst_port": "in" },
+        { "src": "dist", "dst": "sdf", "dst_port": "a" },
+        { "src": "const_radius", "dst": "sdf", "dst_port": "b" },
+        
+        { "src": "edge0", "dst": "aa_edges", "dst_port": "a" },
+        { "src": "edge1", "dst": "aa_edges", "dst_port": "b" },
+        { "src": "const_0", "dst": "aa_edges", "dst_port": "c" },
+        { "src": "const_0", "dst": "aa_edges", "dst_port": "d" },
+        
+        { "src": "sdf", "dst": "sdf_result", "dst_port": "x" },
+        { "src": "aa_edges", "dst": "sdf_result", "dst_port": "edges" },
+        
+        { "src": "x_norm", "dst": "out_Color", "dst_port": "in" }
+    ]
+}

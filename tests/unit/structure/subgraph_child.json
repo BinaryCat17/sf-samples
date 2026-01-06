@@ -1,0 +1,13 @@
+{
+    "nodes": [
+        { "id": "in_a", "type": "Input", "data": {"shape": [], "dtype": "f32"} },
+        { "id": "in_b", "type": "Input", "data": {"shape": [], "dtype": "f32"} },
+        { "id": "sum", "type": "Add" },
+        { "id": "out_res", "type": "Output" }
+    ],
+    "links": [
+        { "src": "in_a", "src_port": "out", "dst": "sum", "dst_port": "a" },
+        { "src": "in_b", "src_port": "out", "dst": "sum", "dst_port": "b" },
+        { "src": "sum", "src_port": "out", "dst": "out_res", "dst_port": "in" }
+    ]
+}

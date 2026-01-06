@@ -1,0 +1,12 @@
+{
+    "nodes": [
+        { "id": "data", "type": "Const", "data": {"value": [10.0, 20.0, 30.0, 40.0]} },
+        { "id": "mask", "type": "Const", "data": {"value": [1.0, 0.0, 1.0, 0.0]} },
+
+        { "id": "filtered", "type": "Filter" }
+    ],
+    "links": [
+        { "src": "data", "src_port": "out", "dst": "filtered", "dst_port": "in" },
+        { "src": "mask", "src_port": "out", "dst": "filtered", "dst_port": "mask" }
+    ]
+}

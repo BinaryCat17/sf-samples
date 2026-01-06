@@ -1,0 +1,12 @@
+{
+    "nodes": [
+        { "id": "1", "type": "Const", "data": {"value": [1.0, 2.0, 3.0]} },
+        { "id": "2", "type": "Const", "data": {"value": [4.0, 5.0, 6.0, 7.0]} },
+
+        { "id": "3", "type": "Add" }
+    ],
+    "links": [
+        { "src": "1", "src_port": "out", "dst": "3", "dst_port": "a" },
+        { "src": "2", "src_port": "out", "dst": "3", "dst_port": "b" }
+    ]
+}
