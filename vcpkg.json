@@ -1,0 +1,8 @@
+{
+  "name": "sf-samples",
+  "version": "0.1.0",
+  "dependencies": [
+    "sf-compiler",
+    "sf-runtime"
+  ]
+}
