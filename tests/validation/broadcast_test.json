@@ -1,0 +1,13 @@
+{
+    "nodes": [
+        { "id": "A", "type": "Const", "data": { "meta": { "shape": [5, 1], "dtype": "f32" }, "value": [1, 2, 3, 4, 5] } },
+        { "id": "B", "type": "Const", "data": { "meta": { "shape": [1, 5], "dtype": "f32" }, "value": [10, 20, 30, 40, 50] } },
+        { "id": "Add", "type": "Add" },
+        { "id": "Output", "type": "Output", "data": { "shape": [5, 5] } }
+    ],
+    "links": [
+        { "src": "A", "dst": "Add", "dst_port": "a" },
+        { "src": "B", "dst": "Add", "dst_port": "b" },
+        { "src": "Add", "dst": "Output", "dst_port": "in" }
+    ]
+}
