@@ -26,4 +26,15 @@ add_subdirectory(apps/sf-runner)
 add_subdirectory(apps/sf-window)
 
 # Assets
+
 file(COPY assets/ DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/assets)
+
+
+
+# Tests
+
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/tests")
+
+    add_subdirectory(tests)
+
+endif()

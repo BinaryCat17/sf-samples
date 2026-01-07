@@ -1,0 +1,32 @@
+{
+    "nodes": [
+        { "id": "a", "type": "Const", "data": {"value": 10.0} },
+        { "id": "b", "type": "Const", "data": {"value": 5.0} },
+        { "id": "c", "type": "Const", "data": {"value": 2.0} },
+        
+        { "id": "add", "type": "Add" },
+        { "id": "sub", "type": "Sub" },
+        { "id": "mul", "type": "Mul" },
+        { "id": "div", "type": "Div" },
+        { "id": "fma", "type": "Fma" },
+        
+        { "id": "out_add", "type": "Output" },
+        { "id": "out_sub", "type": "Output" },
+        { "id": "out_mul", "type": "Output" },
+        { "id": "out_div", "type": "Output" },
+        { "id": "out_fma", "type": "Output" }
+    ],
+    "links": [
+        { "src": "a", "dst": "add", "dst_port": "a" }, { "src": "b", "dst": "add", "dst_port": "b" },
+        { "src": "a", "dst": "sub", "dst_port": "a" }, { "src": "b", "dst": "sub", "dst_port": "b" },
+        { "src": "a", "dst": "mul", "dst_port": "a" }, { "src": "c", "dst": "mul", "dst_port": "b" },
+        { "src": "a", "dst": "div", "dst_port": "a" }, { "src": "c", "dst": "div", "dst_port": "b" },
+        { "src": "a", "dst": "fma", "dst_port": "a" }, { "src": "b", "dst": "fma", "dst_port": "b" }, { "src": "c", "dst": "fma", "dst_port": "c" },
+        
+        { "src": "add", "dst": "out_add", "dst_port": "in" },
+        { "src": "sub", "dst": "out_sub", "dst_port": "in" },
+        { "src": "mul", "dst": "out_mul", "dst_port": "in" },
+        { "src": "div", "dst": "out_div", "dst_port": "in" },
+        { "src": "fma", "dst": "out_fma", "dst_port": "in" }
+    ]
+}

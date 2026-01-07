@@ -1,9 +1,0 @@
-{
-    "nodes": [
-        { "id": "One", "type": "Const", "data": { "value": 1.0 } },
-        { "id": "StateRO", "type": "Output" }
-    ],
-    "links": [
-        { "src": "One", "dst": "StateRO", "dst_port": "in" }
-    ]
-}
