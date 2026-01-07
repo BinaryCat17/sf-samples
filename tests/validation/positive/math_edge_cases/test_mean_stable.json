@@ -4,7 +4,9 @@
             "id": "in",
             "type": "Input",
             "data": {
-                "shape": [1000],
+                "shape": [
+                    1000
+                ],
                 "dtype": "f32"
             }
         },

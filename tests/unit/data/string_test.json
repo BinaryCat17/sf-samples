@@ -1,22 +1,95 @@
 {
     "nodes": [
-        { "id": "1", "type": "Const", "data": {"value": "Apple"} },
-        { "id": "2", "type": "Const", "data": {"value": "Banana"} },
-        { "id": "3", "type": "Const", "data": {"value": "Apple"} },
-        { "id": "4", "type": "Const", "data": {"value": "Match"} },
-        { "id": "5", "type": "Const", "data": {"value": "NoMatch"} },
-
-        { "id": "10", "type": "Equal" },
-        { "id": "11", "type": "Equal" },
-        { "id": "12", "type": "Select" }
+        {
+            "id": "1",
+            "type": "Const",
+            "data": {
+                "value": "Apple"
+            }
+        },
+        {
+            "id": "2",
+            "type": "Const",
+            "data": {
+                "value": "Banana"
+            }
+        },
+        {
+            "id": "3",
+            "type": "Const",
+            "data": {
+                "value": "Apple"
+            }
+        },
+        {
+            "id": "4",
+            "type": "Const",
+            "data": {
+                "value": "Match"
+            }
+        },
+        {
+            "id": "5",
+            "type": "Const",
+            "data": {
+                "value": "NoMatch"
+            }
+        },
+        {
+            "id": "10",
+            "type": "Equal"
+        },
+        {
+            "id": "11",
+            "type": "Equal"
+        },
+        {
+            "id": "12",
+            "type": "Select"
+        }
     ],
     "links": [
-        { "src": "1", "src_port": "out", "dst": "10", "dst_port": "a" },
-        { "src": "3", "src_port": "out", "dst": "10", "dst_port": "b" },
-        { "src": "1", "src_port": "out", "dst": "11", "dst_port": "a" },
-        { "src": "2", "src_port": "out", "dst": "11", "dst_port": "b" },
-        { "src": "10", "src_port": "out", "dst": "12", "dst_port": "cond" },
-        { "src": "4", "src_port": "out", "dst": "12", "dst_port": "true" },
-        { "src": "5", "src_port": "out", "dst": "12", "dst_port": "false" }
+        {
+            "src": "1",
+            "src_port": "out",
+            "dst": "10",
+            "dst_port": "a"
+        },
+        {
+            "src": "3",
+            "src_port": "out",
+            "dst": "10",
+            "dst_port": "b"
+        },
+        {
+            "src": "1",
+            "src_port": "out",
+            "dst": "11",
+            "dst_port": "a"
+        },
+        {
+            "src": "2",
+            "src_port": "out",
+            "dst": "11",
+            "dst_port": "b"
+        },
+        {
+            "src": "10",
+            "src_port": "out",
+            "dst": "12",
+            "dst_port": "cond"
+        },
+        {
+            "src": "4",
+            "src_port": "out",
+            "dst": "12",
+            "dst_port": "true"
+        },
+        {
+            "src": "5",
+            "src_port": "out",
+            "dst": "12",
+            "dst_port": "false"
+        }
     ]
 }

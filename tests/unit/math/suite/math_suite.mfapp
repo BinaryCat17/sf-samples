@@ -1,16 +1,29 @@
 {
     "pipeline": {
         "kernels": [
-            { "id": "math", "entry": "math_suite.json" }
+            {
+                "id": "math",
+                "entry": "math_suite.json"
+            }
         ]
     },
     "test": {
         "expectations": {
-            "out_add": [15.0],
-            "out_sub": [5.0],
-            "out_mul": [20.0],
-            "out_div": [5.0],
-            "out_fma": [52.0]
+            "out_add": [
+                15.0
+            ],
+            "out_sub": [
+                5.0
+            ],
+            "out_mul": [
+                20.0
+            ],
+            "out_div": [
+                5.0
+            ],
+            "out_fma": [
+                52.0
+            ]
         }
     }
 }

@@ -1,17 +1,75 @@
 {
     "nodes": [
-        { "id": "A", "type": "Const", "data": { "meta": { "shape": [5, 5], "dtype": "f32" }, "value": 1.0 } },
-        { "id": "B", "type": "Const", "data": { "meta": { "shape": [5, 5], "dtype": "f32" }, "value": 2.0 } },
-        { "id": "Add", "type": "Add" },
-        { "id": "Sum", "type": "ReduceSum" },
-        { "id": "Output", "type": "Output" },
-        { "id": "DebugAdd", "type": "Output" }
+        {
+            "id": "A",
+            "type": "Const",
+            "data": {
+                "meta": {
+                    "shape": [
+                        5,
+                        5
+                    ],
+                    "dtype": "f32"
+                },
+                "value": 1.0
+            }
+        },
+        {
+            "id": "B",
+            "type": "Const",
+            "data": {
+                "meta": {
+                    "shape": [
+                        5,
+                        5
+                    ],
+                    "dtype": "f32"
+                },
+                "value": 2.0
+            }
+        },
+        {
+            "id": "Add",
+            "type": "Add"
+        },
+        {
+            "id": "Sum",
+            "type": "ReduceSum"
+        },
+        {
+            "id": "Output",
+            "type": "Output"
+        },
+        {
+            "id": "DebugAdd",
+            "type": "Output"
+        }
     ],
     "links": [
-        { "src": "A", "dst": "Add", "dst_port": "a" },
-        { "src": "B", "dst": "Add", "dst_port": "b" },
-        { "src": "Add", "dst": "Sum", "dst_port": "in" },
-        { "src": "Sum", "dst": "Output", "dst_port": "in" },
-        { "src": "Add", "dst": "DebugAdd", "dst_port": "in" }
+        {
+            "src": "A",
+            "dst": "Add",
+            "dst_port": "a"
+        },
+        {
+            "src": "B",
+            "dst": "Add",
+            "dst_port": "b"
+        },
+        {
+            "src": "Add",
+            "dst": "Sum",
+            "dst_port": "in"
+        },
+        {
+            "src": "Sum",
+            "dst": "Output",
+            "dst_port": "in"
+        },
+        {
+            "src": "Add",
+            "dst": "DebugAdd",
+            "dst_port": "in"
+        }
     ]
 }

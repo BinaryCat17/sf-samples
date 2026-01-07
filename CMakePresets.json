@@ -1,34 +1,40 @@
 {
-  "version": 3,
-  "configurePresets": [
-    {
-      "name": "default",
-      "hidden": true,
-      "generator": "Ninja",
-      "binaryDir": "$env{SIONFLOW_BUILD_ROOT}/sf-samples/${presetName}",
-      "cacheVariables": {
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "CMAKE_C_COMPILER_LAUNCHER": "ccache"
-      }
-    },
-    {
-      "name": "vcpkg",
-      "hidden": true,
-      "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-        "VCPKG_OVERLAY_PORTS": "${sourceDir}/../sf-spec/vcpkg-ports;${sourceDir}/../sf-compiler/vcpkg-ports;${sourceDir}/../sf-runtime/vcpkg-ports;${sourceDir}/../sf-backend-cpu/vcpkg-ports;${sourceDir}/vcpkg-ports"
-      }
-    },
-    {
-      "name": "x64-linux",
-      "inherits": ["default", "vcpkg"],
-      "displayName": "x64 Linux Debug",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
-      }
-    }
-  ],
-  "buildPresets": [
-    { "name": "x64-linux", "configurePreset": "x64-linux" }
-  ]
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "$env{SIONFLOW_BUILD_ROOT}/sf-samples/${presetName}",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_C_COMPILER_LAUNCHER": "ccache"
+            }
+        },
+        {
+            "name": "vcpkg",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+                "VCPKG_OVERLAY_PORTS": "${sourceDir}/../sf-spec/vcpkg-ports;${sourceDir}/../sf-compiler/vcpkg-ports;${sourceDir}/../sf-runtime/vcpkg-ports;${sourceDir}/../sf-backend-cpu/vcpkg-ports;${sourceDir}/vcpkg-ports"
+            }
+        },
+        {
+            "name": "x64-linux",
+            "inherits": [
+                "default",
+                "vcpkg"
+            ],
+            "displayName": "x64 Linux Debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "x64-linux",
+            "configurePreset": "x64-linux"
+        }
+    ]
 }

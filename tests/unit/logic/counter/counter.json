@@ -1,15 +1,47 @@
 {
     "nodes": [
-        { "id": "step", "type": "Const", "data": {"value": 1.0} },
-        { "id": "val_in", "type": "Input", "data": {"shape": [], "persistent": true} },
-
-        { "id": "counter_out", "type": "Output" },
-
-        { "id": "next_val", "type": "Add" }
+        {
+            "id": "step",
+            "type": "Const",
+            "data": {
+                "value": 1.0
+            }
+        },
+        {
+            "id": "val_in",
+            "type": "Input",
+            "data": {
+                "shape": [],
+                "persistent": true
+            }
+        },
+        {
+            "id": "counter_out",
+            "type": "Output"
+        },
+        {
+            "id": "next_val",
+            "type": "Add"
+        }
     ],
     "links": [
-        { "src": "val_in", "src_port": "out", "dst": "next_val", "dst_port": "a" },
-        { "src": "step", "src_port": "out", "dst": "next_val", "dst_port": "b" },
-        { "src": "next_val", "src_port": "out", "dst": "counter_out", "dst_port": "in" }
+        {
+            "src": "val_in",
+            "src_port": "out",
+            "dst": "next_val",
+            "dst_port": "a"
+        },
+        {
+            "src": "step",
+            "src_port": "out",
+            "dst": "next_val",
+            "dst_port": "b"
+        },
+        {
+            "src": "next_val",
+            "src_port": "out",
+            "dst": "counter_out",
+            "dst_port": "in"
+        }
     ]
 }

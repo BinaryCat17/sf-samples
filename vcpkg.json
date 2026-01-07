@@ -1,9 +1,9 @@
 {
-  "name": "sf-samples",
-  "version": "0.1.0",
-  "dependencies": [
-    "sf-compiler",
-    "sf-runtime",
-    "sf-backend-cpu"
-  ]
+    "name": "sf-samples",
+    "version": "0.1.0",
+    "dependencies": [
+        "sf-compiler",
+        "sf-runtime",
+        "sf-backend-cpu"
+    ]
 }

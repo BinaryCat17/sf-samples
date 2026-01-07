@@ -1,16 +1,31 @@
 {
-    "window": { "title": "Counter Persistence Test", "width": 100, "height": 100 },
+    "window": {
+        "title": "Counter Persistence Test",
+        "width": 100,
+        "height": 100
+    },
     "pipeline": {
         "resources": [
-            { "name": "CounterState", "dtype": "F32", "shape": [], "persistent": true }
+            {
+                "name": "CounterState",
+                "dtype": "F32",
+                "shape": [],
+                "persistent": true
+            }
         ],
         "kernels": [
             {
                 "id": "main",
                 "entry": "counter.json",
                 "bindings": [
-                    { "port": "val_in", "resource": "CounterState" },
-                    { "port": "counter_out", "resource": "CounterState" }
+                    {
+                        "port": "val_in",
+                        "resource": "CounterState"
+                    },
+                    {
+                        "port": "counter_out",
+                        "resource": "CounterState"
+                    }
                 ]
             }
         ]
@@ -18,7 +33,9 @@
     "test": {
         "frames": 5,
         "expectations": {
-            "CounterState": [5.0]
+            "CounterState": [
+                5.0
+            ]
         }
     }
 }

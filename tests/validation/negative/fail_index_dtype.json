@@ -1,9 +1,22 @@
 {
     "nodes": [
-        { "id": "Idx", "type": "Input", "data": { "shape": [], "provider": "host.index.0" } },
-        { "id": "Color", "type": "Output" }
+        {
+            "id": "Idx",
+            "type": "Index",
+            "data": {
+                "axis": 0
+            }
+        },
+        {
+            "id": "Color",
+            "type": "Output"
+        }
     ],
     "links": [
-        { "src": "Idx", "dst": "Color", "dst_port": "in" }
+        {
+            "src": "Idx",
+            "dst": "Color",
+            "dst_port": "in"
+        }
     ]
 }

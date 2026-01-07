@@ -1,10 +1,24 @@
 {
     "nodes": [
-        { "id": "A", "type": "Add" },
-        { "id": "B", "type": "Add" }
+        {
+            "id": "A",
+            "type": "Add"
+        },
+        {
+            "id": "B",
+            "type": "Add"
+        }
     ],
     "links": [
-        { "src": "A", "dst": "B", "dst_port": "a" },
-        { "src": "B", "dst": "A", "dst_port": "a" }
+        {
+            "src": "A",
+            "dst": "B",
+            "dst_port": "a"
+        },
+        {
+            "src": "B",
+            "dst": "A",
+            "dst_port": "a"
+        }
     ]
 }

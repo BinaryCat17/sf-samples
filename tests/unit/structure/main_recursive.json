@@ -1,11 +1,36 @@
 {
     "nodes": [
-        { "id": "val", "type": "Const", "data": {"value": 5.0} },
-        { "id": "outer_call", "type": "Call", "data": {"path": "sub_outer.json"} },
-        { "id": "final", "type": "Output" }
+        {
+            "id": "val",
+            "type": "Const",
+            "data": {
+                "value": 5.0
+            }
+        },
+        {
+            "id": "outer_call",
+            "type": "Call",
+            "data": {
+                "path": "sub_outer.json"
+            }
+        },
+        {
+            "id": "final",
+            "type": "Output"
+        }
     ],
     "links": [
-        { "src": "val", "src_port": "out", "dst": "outer_call", "dst_port": "in" },
-        { "src": "outer_call", "src_port": "out", "dst": "final", "dst_port": "in" }
+        {
+            "src": "val",
+            "src_port": "out",
+            "dst": "outer_call",
+            "dst_port": "in"
+        },
+        {
+            "src": "outer_call",
+            "src_port": "out",
+            "dst": "final",
+            "dst_port": "in"
+        }
     ]
 }

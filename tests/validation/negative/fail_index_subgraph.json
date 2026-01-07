@@ -1,9 +1,22 @@
 {
     "nodes": [
-        { "id": "CallSub", "type": "Call", "data": { "path": "sub_with_index.json" } },
-        { "id": "Color", "type": "Output" }
+        {
+            "id": "CallSub",
+            "type": "Call",
+            "data": {
+                "path": "sub_with_index.json"
+            }
+        },
+        {
+            "id": "Color",
+            "type": "Output"
+        }
     ],
     "links": [
-        { "src": "CallSub", "dst": "Color", "dst_port": "in" }
+        {
+            "src": "CallSub",
+            "dst": "Color",
+            "dst_port": "in"
+        }
     ]
 }

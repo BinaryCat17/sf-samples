@@ -1,11 +1,37 @@
 {
     "nodes": [
-        { "id": "in", "type": "Input", "data": {"shape": [], "dtype": "f32"} },
-        { "id": "inner_call", "type": "Call", "data": {"path": "sub_inner.json"} },
-        { "id": "out", "type": "Output" }
+        {
+            "id": "in",
+            "type": "Input",
+            "data": {
+                "shape": [],
+                "dtype": "f32"
+            }
+        },
+        {
+            "id": "inner_call",
+            "type": "Call",
+            "data": {
+                "path": "sub_inner.json"
+            }
+        },
+        {
+            "id": "out",
+            "type": "Output"
+        }
     ],
     "links": [
-        { "src": "in", "src_port": "out", "dst": "inner_call", "dst_port": "in" },
-        { "src": "inner_call", "src_port": "out", "dst": "out", "dst_port": "in" }
+        {
+            "src": "in",
+            "src_port": "out",
+            "dst": "inner_call",
+            "dst_port": "in"
+        },
+        {
+            "src": "inner_call",
+            "src_port": "out",
+            "dst": "out",
+            "dst_port": "in"
+        }
     ]
 }

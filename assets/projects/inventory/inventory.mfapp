@@ -11,11 +11,43 @@
     },
     "pipeline": {
         "resources": [
-            { "name": "Inventory", "dtype": "F32", "shape": [4] },
-            { "name": "u_Mouse",   "dtype": "F32", "shape": [4] },
-            { "name": "u_ResX",    "dtype": "F32", "shape": [1] },
-            { "name": "u_ResY",    "dtype": "F32", "shape": [1] },
-            { "name": "out_Color", "dtype": "F32", "shape": [512, 512, 4] }
+            {
+                "name": "Inventory",
+                "dtype": "F32",
+                "shape": [
+                    4
+                ]
+            },
+            {
+                "name": "u_Mouse",
+                "dtype": "F32",
+                "shape": [
+                    4
+                ]
+            },
+            {
+                "name": "u_ResX",
+                "dtype": "F32",
+                "shape": [
+                    1
+                ]
+            },
+            {
+                "name": "u_ResY",
+                "dtype": "F32",
+                "shape": [
+                    1
+                ]
+            },
+            {
+                "name": "out_Color",
+                "dtype": "F32",
+                "shape": [
+                    512,
+                    512,
+                    4
+                ]
+            }
         ],
         "kernels": [
             {
@@ -23,11 +55,26 @@
                 "entry": "inventory_logic.json",
                 "frequency": 1,
                 "bindings": [
-                    { "port": "Inventory", "resource": "Inventory" },
-                    { "port": "out_Inventory", "resource": "Inventory" },
-                    { "port": "u_Mouse",   "resource": "u_Mouse" },
-                    { "port": "u_ResX",    "resource": "u_ResX" },
-                    { "port": "u_ResY",    "resource": "u_ResY" }
+                    {
+                        "port": "Inventory",
+                        "resource": "Inventory"
+                    },
+                    {
+                        "port": "out_Inventory",
+                        "resource": "Inventory"
+                    },
+                    {
+                        "port": "u_Mouse",
+                        "resource": "u_Mouse"
+                    },
+                    {
+                        "port": "u_ResX",
+                        "resource": "u_ResX"
+                    },
+                    {
+                        "port": "u_ResY",
+                        "resource": "u_ResY"
+                    }
                 ]
             },
             {
@@ -35,10 +82,22 @@
                 "entry": "inventory_render.json",
                 "frequency": 1,
                 "bindings": [
-                    { "port": "Inventory", "resource": "Inventory" },
-                    { "port": "out_Color", "resource": "out_Color" },
-                    { "port": "u_ResX",    "resource": "u_ResX" },
-                    { "port": "u_ResY",    "resource": "u_ResY" }
+                    {
+                        "port": "Inventory",
+                        "resource": "Inventory"
+                    },
+                    {
+                        "port": "out_Color",
+                        "resource": "out_Color"
+                    },
+                    {
+                        "port": "u_ResX",
+                        "resource": "u_ResX"
+                    },
+                    {
+                        "port": "u_ResY",
+                        "resource": "u_ResY"
+                    }
                 ]
             }
         ]

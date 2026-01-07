@@ -8,14 +8,14 @@
         "kernels": [
             {
                 "id": "main",
-                "entry": "../../tests/unit/math/simple_math.json"
+                "entry": "unit/math/math_test.json"
             }
         ]
     },
     "assets": [
         {
             "name": "test_blob",
-            "path": "../../README.md",
+            "path": "../../sf-spec/README.md",
             "type": "raw"
         }
     ]
