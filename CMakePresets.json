@@ -15,7 +15,7 @@
       "hidden": true,
       "cacheVariables": {
         "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-        "VCPKG_OVERLAY_PORTS": "${sourceDir}/../sf-spec/vcpkg-ports;${sourceDir}/../sf-compiler/vcpkg-ports;${sourceDir}/../sf-runtime/vcpkg-ports"
+        "VCPKG_OVERLAY_PORTS": "${sourceDir}/../sf-spec/vcpkg-ports;${sourceDir}/../sf-compiler/vcpkg-ports;${sourceDir}/../sf-runtime/vcpkg-ports;${sourceDir}/../sf-backend-cpu/vcpkg-ports"
       }
     },
     {

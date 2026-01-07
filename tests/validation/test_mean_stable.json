@@ -1,0 +1,32 @@
+{
+    "nodes": [
+        {
+            "id": "in",
+            "type": "Input",
+            "data": {
+                "shape": [1000],
+                "dtype": "f32"
+            }
+        },
+        {
+            "id": "mean",
+            "type": "MeanStable"
+        },
+        {
+            "id": "out",
+            "type": "Output"
+        }
+    ],
+    "links": [
+        {
+            "src": "in",
+            "dst": "mean",
+            "dst_port": "in"
+        },
+        {
+            "src": "mean",
+            "dst": "out",
+            "dst_port": "in"
+        }
+    ]
+}
