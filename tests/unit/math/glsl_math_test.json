@@ -88,7 +88,7 @@
             "src": "A",
             "dst": "LenRes",
             "src_port": "out",
-            "dst_port": "x"
+            "dst_port": "in"
         },
         {
             "src": "Edge",

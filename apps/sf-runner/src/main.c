@@ -39,13 +39,44 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    sf_backend backend;
-    sf_backend_cpu_init(&backend, app_desc.num_threads);
+        sf_backend backend;
 
-    int result = sf_host_run_headless(&app_desc, backend, frames);
+        sf_backend_cpu_init(&backend, app_desc.num_threads);
+
     
-    if (backend.shutdown) backend.shutdown(backend.state);
-    sf_host_desc_cleanup(&app_desc);
 
-    return result;
-}
+        SF_LOG_INFO("Executing '%s' for %d frames...", mfapp_path, frames);
+
+        fflush(stdout);
+
+    
+
+        int result = sf_host_run_headless(&app_desc, backend, frames);
+
+        
+
+        if (result == 0) {
+
+            SF_LOG_INFO("Execution finished successfully.");
+
+        } else {
+
+            SF_LOG_ERROR("Execution failed with code %d", result);
+
+        }
+
+        fflush(stdout);
+
+        
+
+        if (backend.shutdown) backend.shutdown(backend.state);
+
+        sf_host_desc_cleanup(&app_desc);
+
+    
+
+        return result;
+
+    }
+
+    
