@@ -1,7 +1,4 @@
 {
-    "imports": [
-        "../../../assets/lib/math"
-    ],
     "nodes": [
         {
             "id": "val",
